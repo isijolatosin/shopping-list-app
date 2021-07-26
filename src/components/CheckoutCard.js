@@ -27,7 +27,6 @@ function CheckoutCard({ item }) {
   const removeItemFromBasket = () => {
     // Removing the Item from Redux STORE through dispatch action... the basket slice
     dispatch(removeFromBasket(item.id));
-    // console.log(id);
   };
 
   return (

@@ -10,32 +10,6 @@ import Currency from 'react-currency-formatter';
 function Checkout() {
   const items = useSelector(selectItems);
   const user = useSelector(userLoggedIn);
-  const [itemsList, setItemsList] = React.useState([]);
-  // console.log(items);
-
-  // Getting items from DB
-  React.useEffect(() => {
-    if (!user) {
-      return;
-    } else {
-      db.collection('checkout')
-        .doc(`${user}/`)
-        .collection('shopping-history')
-        .orderBy('timestamp', 'asc')
-        .onSnapshot((snapshot) => {
-          const results = snapshot.docs.map((doc) => ({
-            // id: doc.id,
-            data: doc.data(),
-          }));
-          if (results) {
-            setItemsList(results);
-          } else {
-            return;
-          }
-          // console.log(results);
-        });
-    }
-  }, [user]);
 
   // Calculating Subtotal
   const subTotal = items.reduce((total, item) => total + item.price, 0);
