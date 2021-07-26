@@ -1,0 +1,44 @@
+.top_wrapper {
+  width: 100%;
+  background-color: rgb(211, 211, 211);
+}
+.container_header {
+  font-size: 24px;
+  margin-left: 10px;
+  color: rgb(92, 92, 92);
+}
+.user {
+  color: rgb(136, 136, 136);
+  margin-left: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.items_container {
+  margin: 30px 30px 30px 10px;
+  flex: 0.8;
+}
+.proceed_container {
+  background-color: rgb(228, 228, 228);
+  flex: 0.2;
+  height: 100%;
+}
+.proceed_container > span {
+  margin-left: 10px;
+  font-weight: 800;
+}
+.proceed_container .currency {
+  color: green;
+}
+.button {
+  width: 90%;
+  margin: 10px;
+  border: none;
+  font-size: 16px;
+  color: rgb(62, 62, 62);
+  cursor: pointer;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+}

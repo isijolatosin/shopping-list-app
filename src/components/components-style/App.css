@@ -1,0 +1,13 @@
+.app {
+  overflow-y: auto;
+  height: 100vh;
+}
+.header {
+  z-index: 1;
+  top: 0;
+  position: sticky;
+  align-self: flex-start;
+  position: -webkit-sticky;
+  overflow-y: auto;
+  width: 100%;
+}

@@ -1,0 +1,31 @@
+.login {
+  text-align: center;
+  margin-top: 100px;
+}
+.login_header {
+  font-size: 35px;
+  color: gray;
+  margin-bottom: 20px;
+}
+.input_container > span {
+  font-size: 18px;
+  color: gray;
+}
+.input {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgb(181, 181, 181);
+  font-size: 16px;
+  margin-left: 20px;
+  outline: none;
+  width: 20%;
+}
+.submit_button {
+  border: none;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: rgb(99, 99, 99);
+  cursor: pointer;
+}
