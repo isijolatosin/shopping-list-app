@@ -10,7 +10,7 @@ function Checkout() {
   const items = useSelector(selectItems);
   const user = useSelector(userLoggedIn);
 
-  // Calculating Subtotal
+  // CALCULATING SUBTOTAL
   const subTotal = items.reduce((total, item) => total + item.price, 0);
 
   return (

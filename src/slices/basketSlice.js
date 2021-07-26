@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// INITIALIZING REDUX STATE
 const initialState = {
   items: [],
   historyBasket: [],
   user: `${JSON.parse(localStorage.getItem('user'))}`,
 };
 
+// CREATING SLICE AND REDUCER ACTIONS
 export const basketSlice = createSlice({
   name: 'basket',
   initialState,
@@ -43,7 +45,9 @@ export const basketSlice = createSlice({
     },
   },
 });
+// END OF CREATING SLICE AND REDUCER ACTIONS
 
+// EXPORTING REDUCERS ACTIONS AND STATES
 export const {
   addToBasket,
   addToHistoryBasket,
@@ -52,7 +56,7 @@ export const {
   loggedOut,
 } = basketSlice.actions;
 
-// Selectors - This is how we pull information from the Global store slice
+// THIS IS PULLING INFORMATIONS FROM GLOBAL STORE SLICE
 export const selectItems = (state) => state.basket.items;
 export const historyBasket = (state) => state.basket.historyBasket;
 export const userLoggedIn = (state) => state.basket.user;

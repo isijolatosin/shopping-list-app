@@ -36,14 +36,17 @@ function App() {
       <div className='app'>
         <Header />
         <Switch>
-          {/* THIS IS THE CHECKOUT PAGE */}
+          {/* THIS IS THE CART PAGE */}
           <Route path='/cart'>
             <Checkout />
           </Route>
+
           {/* THIS IS THE CHECKOUT PAGE */}
           <Route path='/shopping-history'>
             <History />
           </Route>
+
+          {/* CONDITIONING HOW THE LOGIN AND PRODUCT PAGE ARE BEING RENDERED */}
           {user ? (
             <Route path='/product-page'>
               <ProductPage products={products} />
@@ -54,6 +57,7 @@ function App() {
             </Route>
           )}
 
+          {/* LANDING PAGE */}
           <Route path='/'>
             <Home />
           </Route>

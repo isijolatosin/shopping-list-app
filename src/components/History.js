@@ -16,13 +16,14 @@ function History() {
   });
   const [input, setInput] = React.useState('');
 
+  // HANDLES INPUT CHANGE
   const handleChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
     setIsAble(false);
   };
 
-  // Search...
+  // SEARCH LOGIC
   const SearchData = (e) => {
     e.preventDefault();
 
@@ -48,6 +49,7 @@ function History() {
     setInput('');
     setIsAble(true);
   };
+  // END OF SEARCH LOGIC
 
   // EXTRACTING KEYS OF ITEMS IN HISTORY
   const extractObjectKeys = (object) => {
@@ -61,7 +63,7 @@ function History() {
     return sortted;
   };
 
-  // Getting items from DB
+  // GETTING ITEMS FROM DB TO RENDER THE HISTORY LIST
   React.useEffect(() => {
     // DYNAMICALLY GETTING KEYS OF ITEMS IN HISTORY
     const FlattenHistory = (histories) => {
@@ -98,6 +100,7 @@ function History() {
         });
       }
     };
+    // END OF DYNAMICALLY GETTING KEYS OF ITEMS IN HISTORY
 
     if (!user) {
       return;
@@ -120,7 +123,9 @@ function History() {
         });
     }
   }, [user]);
+  // END OF GETTING ITEMS FROM DB TO RENDER THE HISTORY LIST
 
+  // SORTING LOGIC FUNCTION TO SORT HISTORY LIST BY CLICKING ON THE HOSTORY HEADER NAME
   const sortColumn = (sortKey) => {
     let newFlattenedLocation = {
       ...flattenedHistories,
@@ -152,6 +157,7 @@ function History() {
       setIsSorted(false);
     }
   };
+  // END OF SORTING
 
   return (
     <div style={{ position: 'relative' }}>

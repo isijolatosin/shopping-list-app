@@ -14,6 +14,7 @@ function Header() {
     dispatch(loggedOut());
   };
 
+  // FUNCTION IS CALLED WHEN THE USER IS MAKING A ROUTING TO SHOPPING HISTORY AND TELL THEM THEY ARE NOT LOGGED IN YET
   const handleNoUserAlert = () => {
     if (!user) {
       alert('Please Sign In to View Hostory!');

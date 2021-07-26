@@ -7,6 +7,8 @@ function ProductPage({ products }) {
   return (
     <div className='home'>
       <Banner />
+
+      {/* RENDERING PRODUCTS IN THREES ON A ROW */}
       <div className='home_row'>
         {products
           .slice(0, 3)
@@ -112,6 +114,7 @@ function ProductPage({ products }) {
             />
           ))}
       </div>
+      {/* END OF RENDERING PRODUCTS IN THREES ON A ROW */}
     </div>
   );
 }

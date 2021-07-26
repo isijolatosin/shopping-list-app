@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom';
 
 function Login(props) {
   const [input, setInput] = React.useState('');
+
+  // INITIALIZING USEDISPATCH HOOK
   const dispatch = useDispatch();
 
+  // THIS FUNCTION IS CALLED WHEN THE SUBMIT BUTTON IS CLICKED
   const handleSubmit = () => {
     localStorage.setItem('user', JSON.stringify(input));
 

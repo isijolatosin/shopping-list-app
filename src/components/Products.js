@@ -12,14 +12,22 @@ const MAX_RATING = 5;
 const MIN_RATING = 1;
 
 function Products({ id, title, price, image, category, description }) {
+  // GETTING USER STATUS FROM REDUX STORE WITH THE USESELECTOR
   const user = useSelector(userLoggedIn);
   const [isMoused, setIsMoused] = React.useState(false);
+
+  // INITIALIZING USEDISPATCH HOOK
   const dispatch = useDispatch();
+
+  // RATING STAR LOGIC
   const [rating] = React.useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1) + MIN_RATING)
   );
+
+  // HAS PRIME LOGIC
   const [hasPrime] = React.useState(Math.random() < 0.5);
 
+  // TRUNCATING THE DESCRIPTION TEXT WITH THIS LOGIC
   const truncate = (str, length) => {
     if (str.length > length) {
       let subStr = str.substring(0, length);
@@ -67,6 +75,7 @@ function Products({ id, title, price, image, category, description }) {
       })
       .catch((error) => console.log('Error' + error.message));
   };
+  // END OF ADDING ITEMS TO THE REDUX STORE
 
   return (
     <div
