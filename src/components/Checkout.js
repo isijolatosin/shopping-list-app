@@ -18,7 +18,9 @@ function Checkout() {
       <div className='top_wrapper'>
         <h3 className='user'>Hi {user}</h3>
         <h2 className='container_header'>
-          {items.length <= 1
+          {items.length < 1
+            ? `You Have ${items.length} item in Your Cart.`
+            : items.length === 1
             ? `You Have ${items.length} item in Your Cart`
             : items.length > 1
             ? `You Have ${items.length} items in Your Cart`

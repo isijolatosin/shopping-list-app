@@ -52,7 +52,7 @@ function History() {
   // EXTRACTING KEYS OF ITEMS IN HISTORY
   const extractObjectKeys = (object) => {
     let objectKeys = [];
-    if (object !== null) {
+    if (object) {
       Object.keys(object.data).forEach((objectKey) => {
         objectKeys.push(objectKey);
       });
@@ -161,50 +161,52 @@ function History() {
           : itemsList.length > 1
           ? `${itemsList.length} Total Histories`
           : itemsList.length === 0
-          ? 'You Have No Recorded History Yet'
+          ? 'You Have No Recorded History Yet.'
           : null}
       </h1>
-      <form
-        onSubmit={SearchData}
-        style={{
-          marginTop: 20,
-          marginBottom: 20,
-          backgroundColor: 'whitesmoke',
-          padding: 10,
-          display: 'flex',
-        }}
-      >
-        <input
+      {itemsList.length > 0 && (
+        <form
+          onSubmit={SearchData}
           style={{
-            padding: 5,
-            border: 'none',
-            backgroundColor: 'lightgray',
-            borderRadius: 3,
-            marginRight: 10,
-            outline: 'none',
-            flex: 1,
+            marginTop: 20,
+            marginBottom: 20,
+            backgroundColor: 'whitesmoke',
+            padding: 10,
+            display: 'flex',
           }}
-          type='text'
-          value={input}
-          onChange={handleChange}
-          placeholder='Search by Category, Price or Title...'
-        />
-        <input
-          disabled={isAble}
-          style={{
-            border: 'none',
-            paddingTop: 5,
-            paddingBottom: 5,
-            paddingLeft: 15,
-            paddingRight: 15,
-            borderRadius: 3,
-            marginLeft: 30,
-            marginRight: 20,
-          }}
-          type='submit'
-          onClick={SearchData}
-        />
-      </form>
+        >
+          <input
+            style={{
+              padding: 5,
+              border: 'none',
+              backgroundColor: 'lightgray',
+              borderRadius: 3,
+              marginRight: 10,
+              outline: 'none',
+              flex: 1,
+            }}
+            type='text'
+            value={input}
+            onChange={handleChange}
+            placeholder='Search by Category, Price or Title...'
+          />
+          <input
+            disabled={isAble}
+            style={{
+              border: 'none',
+              paddingTop: 5,
+              paddingBottom: 5,
+              paddingLeft: 15,
+              paddingRight: 15,
+              borderRadius: 3,
+              marginLeft: 30,
+              marginRight: 20,
+            }}
+            type='submit'
+            onClick={SearchData}
+          />
+        </form>
+      )}
       {showPrompt && (
         <span
           style={{
