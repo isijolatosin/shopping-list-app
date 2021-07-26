@@ -49,42 +49,6 @@ function History() {
     setIsAble(true);
   };
 
-  // DYNAMICALLY GETTING KEYS OF ITEMS IN HISTORY
-  const FlattenHistory = (histories) => {
-    const history = histories[0];
-    let data = [];
-    for (const history of histories) {
-      if (history !== null) {
-        data.push({
-          category: history.data.category,
-          description: history.data.description,
-          hasPrime: `${
-            history.data.hasPrime ? 'Has Prime' : 'No Prime Status'
-          }`,
-          id: history.data.id,
-          image: history.data.image,
-          price: history.data.price,
-          timestamp: `${history.data.timestamp
-            .toDate()
-            .toDateString()}, ${history.data.timestamp
-            .toDate()
-            .toLocaleString(
-              [],
-              { hour: '2-digit', minute: '2-digit', hour12: false },
-              'en-GB'
-            )}`,
-          title: history.data.title,
-        });
-      }
-    }
-    if (histories !== null) {
-      setFlattenedHistories({
-        header: extractObjectKeys(history),
-        data: data,
-      });
-    }
-  };
-
   // EXTRACTING KEYS OF ITEMS IN HISTORY
   const extractObjectKeys = (object) => {
     let objectKeys = [];
@@ -99,6 +63,42 @@ function History() {
 
   // Getting items from DB
   React.useEffect(() => {
+    // DYNAMICALLY GETTING KEYS OF ITEMS IN HISTORY
+    const FlattenHistory = (histories) => {
+      const history = histories[0];
+      let data = [];
+      for (const history of histories) {
+        if (history !== null) {
+          data.push({
+            category: history.data.category,
+            description: history.data.description,
+            hasPrime: `${
+              history.data.hasPrime ? 'Has Prime' : 'No Prime Status'
+            }`,
+            id: history.data.id,
+            image: history.data.image,
+            price: history.data.price,
+            timestamp: `${history.data.timestamp
+              .toDate()
+              .toDateString()}, ${history.data.timestamp
+              .toDate()
+              .toLocaleString(
+                [],
+                { hour: '2-digit', minute: '2-digit', hour12: false },
+                'en-GB'
+              )}`,
+            title: history.data.title,
+          });
+        }
+      }
+      if (histories !== null) {
+        setFlattenedHistories({
+          header: extractObjectKeys(history),
+          data: data,
+        });
+      }
+    };
+
     if (!user) {
       return;
     } else {

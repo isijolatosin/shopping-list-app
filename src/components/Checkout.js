@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import CheckoutCard from './CheckoutCard';
 import './components-style/Checkout.css';
 import { Link } from 'react-router-dom';
-import db from '../firebase';
 import Currency from 'react-currency-formatter';
 
 function Checkout() {

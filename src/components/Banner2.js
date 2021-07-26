@@ -1,8 +1,7 @@
 import React from 'react';
 import './components-style/Banner2.css';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Link } from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 function Banner() {
   return (
