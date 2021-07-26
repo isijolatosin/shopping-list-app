@@ -117,7 +117,6 @@ function History() {
           } else {
             return;
           }
-          // console.log(results);
         });
     }
   }, [user]);
@@ -213,7 +212,7 @@ function History() {
             fontSize: 18,
             color: 'gray',
             textTransform: 'uppercase',
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            backgroundColor: 'rgba(0,0,0,0.9)',
             padding: 10,
             position: 'absolute',
             right: 600,
